@@ -8,6 +8,7 @@ import { auth } from '../firebase'
 import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+import Hero from './components/Hero'
 
 
 export default function Home() {
@@ -32,7 +33,6 @@ export default function Home() {
   //console.log(user.photoUrl)
   return (
     <Wrapper>
-      <Map />
       <ActionItems>
         <Header>
           <UberLogo src="https://i.ibb.co/84stgjq/uber-technologies-new-20218114.jpg" />
@@ -44,6 +44,9 @@ export default function Home() {
             />
           </Profile>
         </Header>
+      <Hero />
+      
+      
         <ActionButtons>
           <Link href="/search">
             <ActionButton>
@@ -62,6 +65,7 @@ export default function Home() {
         </ActionButtons>
         <InputButton>Where to?</InputButton>
       </ActionItems> 
+      <Map />
     </Wrapper>
   )
 }
